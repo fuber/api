@@ -19,12 +19,7 @@ func RootHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	defer conn.Close()
-	bufrw.WriteString(`HTTP/1.1 200 OK
-Date: Tue, 26 Nov 2014 22:28:41 GMT
-Content-Type: text/plain; charset=UTF-8
-Transfer-Encoding: chunked
-
-`)
+	bufrw.WriteString(util.ChunkedHeader())
 	for _ = range time.NewTicker(500 * time.Millisecond).C {
 		served += 1
 		bufrw.WriteString("5\r\n")
