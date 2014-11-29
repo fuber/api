@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/fuber/api/util"
 )
 
 func RootHandler(w http.ResponseWriter, req *http.Request) {
