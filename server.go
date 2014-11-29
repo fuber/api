@@ -40,7 +40,7 @@ func main() {
 	http.HandleFunc("/", RootHandler)
 	http.HandleFunc("/counter", CounterHandler)
 	port := 12345
-	fmt.Printf("🚕 Running Fuber API server at :%d\n", port)
+	fmt.Printf("Running Fuber API server at :%d\n", port)
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
